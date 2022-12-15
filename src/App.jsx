@@ -43,23 +43,14 @@ function App() {
     setChecked(!checked);
   };
 
+ const reset = ()=> { 
+  setCount(0) ; 
+  setLength(10) ; 
+  setState(10);
+  setTotalCounter(0)
+} 
 
-  // const getTotal = () =>{
-  //     useEffect(()=>      
-  //       setState(
-  //       <p>Total: { checked ? (<MyMemo length={ length } /> ) : (<Total length={ length }/>) }</p>
-  //       )
-
-  //     ,[checked])
-  // }
-
-  
- 
-
- 
-
-
-  return (
+ return (
     <div className="App">  
     <label>
         <input
@@ -70,18 +61,14 @@ function App() {
         Use useMemo
       </label>
      
-       {/* <p>Total: { checked ? (<Mymemo length={ length } /> ) : (<Total length={ length }/>) }</p> */}
-      
-      
-
       <div>
        <button onClick={ () => { !checked ? 
               setState( <Total length={ length } totalCounter={ totalCounter }/>): 
               setState( <Mymemo length={ length } totalCounter={ totalCounter }/>); 
               setTotalCounter( totalCounter + 1 )} }>Get Total</button>
               <div>
-              Total:{ state }<br />
-              Number of time calling getTotal function: { totalCounter}
+              <p>Total:{ state }</p>
+              <p>You call getTotal { totalCounter} times</p>
               </div>
      </div>
       <div>
@@ -91,11 +78,7 @@ function App() {
       </div>
 
       <button onClick={ ()=> setCount( count + 1) }>Increase counter</button>Counter: { count }<br/>
-      <button onClick={ ()=> { 
-        setCount(0) ; 
-        setLength(10) ; 
-        setState(10);
-        setTotalCounter(0)} }>Reset</button>
+      <button onClick={ reset }>Reset</button>
   
 
  
