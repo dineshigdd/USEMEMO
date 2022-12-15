@@ -1,5 +1,4 @@
-import { useState, useMemo, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
+import { useState, useMemo  } from 'react'
 import './App.css'
 
 function calculate( length ){
